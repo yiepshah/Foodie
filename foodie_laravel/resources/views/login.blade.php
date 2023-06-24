@@ -20,8 +20,9 @@
         .bg-img {
           /* The image used */
           background-image: url("img_nature.jpg");
-        
+          margin-top: 50px;
           min-height: 380px;
+          
         
           /* Center and scale the image nicely */
           background-position: center;
@@ -89,7 +90,7 @@
 <body>
     @include('include.header')
     <div class="bg-img">
-        <form action="/login" class="container" method="POST">
+        <form action="/login" class="container bg-light" method="POST">
             
           <h1>Login</h1>
           @csrf

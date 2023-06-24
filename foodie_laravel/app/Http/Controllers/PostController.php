@@ -11,7 +11,6 @@ class PostController extends Controller
             'foodsender'=>'required',
             'foodname'=>'required',
             'foodprice'=>'required',
-            'foodimage'=>'required',
             'phonenumber'=>'required'
 
         ]);
@@ -19,11 +18,10 @@ class PostController extends Controller
         $signupdata['foodsender'] = strip_tags($signupdata['foodsender']);
         $signupdata['foodname'] = strip_tags($signupdata['foodname']);
         $signupdata['foodprice'] = strip_tags($signupdata['foodprice']);
-        $signupdata['foodimage'] = strip_tags($signupdata['foodimage']);
         $signupdata['phonenumber'] = strip_tags($signupdata['phonenumber']);
         $signupdata['user_id'] = auth()->id();
 
         Foodpost::create($signupdata);
-        return view('food',['data' => $signupdata]);
+        return view('home');
     }
 }

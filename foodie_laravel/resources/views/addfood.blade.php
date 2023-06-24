@@ -9,8 +9,8 @@
     <title>Add Food</title>
 </head>
 <body>
-    @include('include.header');
-    @include('include.css');
+    @include('include.header')
+    @include('include.css')
 
 
     <form action="/addfood" method="POST" class="form-group mx-auto col-10 col-md-8 col-lg-6" style="margin-top: 4%" >
@@ -31,11 +31,6 @@
             <label for="phonenumber">Number:</label>
             <input type="text" class="form-control" name="phonenumber" placeholder="Enter a phone number">
           </div>
-
-          <div>
-            <label for="foodimage">Food Image</label>
-            <input type="file" class="form-control" name="foodimage">
-          </div> <br><br>
           
           
           <button type="submit" class="btn btn-dark">Submit</button>

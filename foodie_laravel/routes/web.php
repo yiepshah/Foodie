@@ -3,6 +3,7 @@
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Models\Foodpost;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 
@@ -18,28 +19,48 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    
+    // $posts = Foodpost::where('user_id', auth()->id())->latest()->get();
+    $posts = Foodpost::all();
+    return view('home' , ['posts'=>$posts]);
 });
+
+
 
 Route::post('/signup', [UserController::class, 'signup']);
 Route::post('/login',[UserController::class,'login']);
 Route::post('/logout',[UserController::class,'logout']);
 Route::post('/profile',[UserController::class,'profile']);
 
-
-
-Route::get('/signup',[UserController::class,'signup']);
-Route::get('/login',[UserController::class,'login']);
-
-
-
 //foodpost
-Route::get('/addfood',[UserController::class,'createpost']);
 Route::post('/addfood',[PostController::class,'createpost']);
 Route::post('/food',[UserController::class,'food']);
+
+
+Route::get('/signup',function(){
+    return view('signup');
+});
+Route::get('/login',function(){
+    return view('login');
+});
+
+Route::get('/addfood',function(){
+    return view('addfood');
+});
+
+
 Route::get('/food', function (){
    $posts = Foodpost::all();
     return view('food', ['post'=>$posts]);
 });
 
+Route::get('/profile',function(){
+    $posts = Foodpost::where('id', auth()->id())->latest()->get();
+    return view('profile');
+});
+
+Route::get('/profile', function(){
+    $user = User::where('id', auth()->id())->latest()->get();
+    return view('profile');
+});
 
