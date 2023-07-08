@@ -12,28 +12,29 @@
     @include('include.header')
     @include('include.css')
 
-
+    
     <form action="/addfood" method="POST" class="form-group mx-auto col-10 col-md-8 col-lg-6" style="margin-top: 4%" >
+      <h3 style="color:aliceblue">Add Your Food here</h3><br>
         @csrf
         <div class="form-group">
-          <label for="foodsender">Sender:</label><br>
+          <label style="color:rgb(218, 218, 218)" for="foodsender">Sender:</label><br>
           <input type="text" class="form-control" name="foodsender" placeholder="Enter a Sender Name">
           <div class="form-group">
-            <label for="foodname">Food Name:</label>
+            <label style="color:rgb(218, 218, 218)" for="foodname">Food Name:</label>
             <input type="text" class="form-control" name="foodname" placeholder="Enter a Food Name">
           </div>
           <div>
-            <label for="foodprice">Price:</label>
-            <input type="text" class="form-control" name="foodprice" placeholder="Enter a price">
+            <label style="color:rgb(218, 218, 218)" for="foodprice">Price:</label>
+            <input  type="text" class="form-control" name="foodprice" placeholder="Enter a price">
           </div>
 
           <div>
-            <label for="phonenumber">Number:</label>
+            <label style="color:rgb(218, 218, 218)" for="phonenumber">Number:</label>
             <input type="text" class="form-control" name="phonenumber" placeholder="Enter a phone number">
           </div>
           
           
-          <button type="submit" class="btn btn-dark">Submit</button>
+          <button type="submit" class="btn btn-success">Submit</button>
         </div>
       </form>
 

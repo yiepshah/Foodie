@@ -11,6 +11,7 @@
         body, html {
           height: 100%;
           font-family: Arial, Helvetica, sans-serif;
+          background-image: url("https://assets.website-files.com/5f6500b5f971f41a3738e5a1/5f74d23dfddd41438730297e_woman-eating-healthy-vegetarian-dinner-from-buddha-UGS263H%20(1)-p-2600.jpeg")
         }
         
         * {
@@ -19,9 +20,12 @@
         
         .bg-img {
           /* The image used */
-          background-image: url("img_nature.jpg");
+          /* background-image: url("https://th.bing.com/th/id/R.abde79715125b75bf5601a1c78318e1e?rik=fOf3%2b1qg7k%2f9aw&riu=http%3a%2f%2fwww.travelsiteindia.com%2fblog%2fwp-content%2fuploads%2f2018%2f04%2ftraditional-indian-food-sessions.jpg&ehk=hZj0OmrOGIC9z3k%2fmeYcLe5x%2fUkpQeyo7uwn%2fLYvN84%3d&risl=&pid=ImgRaw&r=0"); */
           margin-top: 50px;
           min-height: 380px;
+          
+          
+          
           
         
           /* Center and scale the image nicely */
@@ -36,6 +40,7 @@
           position: center;
           max-width: 300px;
           padding: 16px;
+          background-color: rgb(255, 255, 255)
           
           
         }
@@ -56,7 +61,7 @@
         
         /* Set a style for the submit button */
         .btn {
-          background-color: #201d44;
+          background-color: #000000;
           color: white;
           padding: 16px 20px;
           border: none;
@@ -76,13 +81,8 @@
         .nav-link{
           color: #ddd
         }
-        .containersignup{
-          margin-top: 5%;
-        }
 
-        .container bg-light{
-            margin-top: 4%;
-        }
+      
         
         
         </style>
@@ -90,9 +90,10 @@
 <body>
     @include('include.header')
     <div class="bg-img">
-        <form action="/login" class="container bg-light" method="POST">
+  
+        <form action="/login" class="container" method="POST">
             
-          <h1>Login</h1>
+          <h3>Login</h3><br>
           @csrf
           <label for="email"><b>Email</b></label>
           <input type="text" placeholder="Enter Email" name="loginemail" required>

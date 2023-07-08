@@ -19,7 +19,7 @@
                 <a href="/addfood" class="nav-link active">Add Food</a>
               </li>
               <li class="nav-item">
-                <a href="/" class="nav-link active">Food</a>
+                <a href="/" class="nav-link active">Home</a>
               </li>
               <li class="nav-item">
                 <a href="/profile" class="nav-link active">Profile</a>

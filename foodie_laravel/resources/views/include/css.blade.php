@@ -12,6 +12,7 @@
     body, html {
       height: 100%;
       font-family: Arial, Helvetica, sans-serif;
+      background-image: url('https://assets.website-files.com/5f6500b5f971f41a3738e5a1/5f74d23dfddd41438730297e_woman-eating-healthy-vegetarian-dinner-from-buddha-UGS263H%20(1)-p-2600.jpeg');
     }
     
     * {
@@ -20,7 +21,7 @@
     
     .bg-img {
       /* The image used */
-      background-image: url('C:\xampp\htdocs\Foodie\foodie_laravel\resources\views\img\wallpaperflare.com_wallpaper.jpg');
+     
     
       min-height: 380px;
     
@@ -36,6 +37,7 @@
       position: center;
       max-width: 300px;
       padding: 16px;
+      color: #000000
       
       
     }
@@ -56,7 +58,7 @@
     
     /* Set a style for the submit button */
     .btn {
-      background-color: #201d44;
+      background-color: #000000;
       color: white;
       padding: 16px 20px;
       border: none;
@@ -78,6 +80,7 @@
     }
     .containersignup{
       margin-top: 5%;
+      
     }
     
     </style>

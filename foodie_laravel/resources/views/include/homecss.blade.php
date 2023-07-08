@@ -5,12 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-            .card {
+
+body, html {
+      height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      background-image: url('https://www.thrivenaija.com/wp-content/uploads/2019/12/eating-healthy-food.jpg');
+    }
+
+  .card {
   flex-direction: row;
   align-items: center;
+  background-color: rgb(58, 58, 58);
+  color: rgb(228, 228, 228)
+  
+  
 }
 .card-title {
   font-weight: bold;
+  
 }
 .card img {
   width: 30%;
@@ -23,6 +35,7 @@
   }
   .card-body {
     padding: 0.5em 1.2em;
+    
   }
   .card-body .card-text {
     margin: 0;

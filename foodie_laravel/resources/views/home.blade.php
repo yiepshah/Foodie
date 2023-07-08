@@ -10,44 +10,31 @@
   
 </head>
 <body>
-{{-- @include('include.header')
-@include('include.css')
-      
-    <div class="container">
-        <h1>Homepage</h1>
-        @foreach ($posts as $item)
-        <div style = "background-color:gray;padding: 10px; margin: 10px;">
-        <h3>{{$item->foodname}} by {{$item->foodsender}}</h3>
-        {{$item->foodprice}}
-        <p><a href="/edit-post/{{$item->id}}">Edit</a></p>
-        </div>
-            
-        @endforeach
-    </div> --}}
+
     @include('include.header')
-    @include('include.foodcss')
-    
+    @include('include.homecss')
     @foreach ($posts as $item)
 
     <div class="card">
-        <img src="https://codingyaar.com/wp-content/uploads/bootstrap-4-card-image-left-demo-image.jpg" class="card-img-top" />
+        <img src="https://i.pinimg.com/originals/c5/2b/91/c52b91c37ba4b93c73fe536137dac5a9.jpg" class="card-img-top" />
         <div class="card-body">
-            <p style="font-family: fantasy">Name</p>   
-            <p>{{$item->foodname}}</p><hr><br>
+            <h3>Name</h3><br>   
+            <p>{{$item->foodname}}</p><br><hr>
 
         <div class="card-text">
-          <p style="font-family: fantasy">Restaurant</p>  <p>{{$item->foodsender}}</p>
-        </div><hr><br>
+            <h3>Restaurant</h3><br>
+            <p>{{$item->foodsender}}</p>
+        </div><br><hr>
 
         <div class="card-text">
-            <p style="font-family: fantasy">Rm</p> 
+            <h3>Price</h3><br>
             <p>{{$item->foodprice}}</p>
-        </div><hr><br>
+        </div><br><hr>
 
         <div class="card-text">
-            <p style="font-family: fantasy">Number</p> 
+            <h3>Number</h3><br>
             <p>60 - {{$item->phonenumber}}</p>
-        </div><hr><br>
+        </div><br><hr>
         
         </div>
       </div><br>

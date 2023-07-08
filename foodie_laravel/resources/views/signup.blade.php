@@ -14,22 +14,22 @@
 @include('include.css')
       
     <div class="containersignup">
-        <form action="/signup" class="container bg-light" method="POST">
+        <form action="/signup" class="container" method="POST">
             
-          <h1>Signup</h1>
+          <h3>Signup</h3><br>
           @csrf
           <label for="name"><b>Name</b></label>
           <input type="text" placeholder="Enter Name" name="name" required>
 
           <label for="email"><b>Email</b></label>
           <input type="text" placeholder="Enter Email" name="email" required>
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small><br><br>
+          {{-- <small id="emailHelp" style="color: black" class="form-text">We'll never share your email with anyone else.</small><br><br> --}}
       
           <label for="password"><b>Password</b></label>
           <input type="password" placeholder="Enter Password" name="password" required>
       
           <button type="submit" class="btn">submit</button><br><br>       
-          <a href="/login">Login</a>
+          <a style="color: black" href="/login">Login</a>
         </form>
       </div>
       

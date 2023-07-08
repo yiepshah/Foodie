@@ -22,7 +22,7 @@ Route::get('/', function () {
     
     // $posts = Foodpost::where('user_id', auth()->id())->latest()->get();
     $posts = Foodpost::all();
-    return view('home' , ['posts'=>$posts]);
+    return view('home',['posts'=>$posts]);
 });
 
 
@@ -32,9 +32,7 @@ Route::post('/login',[UserController::class,'login']);
 Route::post('/logout',[UserController::class,'logout']);
 Route::post('/profile',[UserController::class,'profile']);
 
-//foodpost
 Route::post('/addfood',[PostController::class,'createpost']);
-Route::post('/food',[UserController::class,'food']);
 
 
 Route::get('/signup',function(){
@@ -49,18 +47,14 @@ Route::get('/addfood',function(){
 });
 
 
-Route::get('/food', function (){
-   $posts = Foodpost::all();
-    return view('food', ['post'=>$posts]);
-});
 
-Route::get('/profile',function(){
-    $posts = Foodpost::where('id', auth()->id())->latest()->get();
-    return view('profile');
-});
+// // Route::get('/profile',function(){
+// //     $posts = Foodpost::where('id', auth()->id())->latest()->get();
+// //     return view('profile', ['post'=>$posts]);
+// });
 
 Route::get('/profile', function(){
     $user = User::where('id', auth()->id())->latest()->get();
-    return view('profile');
+    return view('profile', ['user'=>$user]);
 });
 
