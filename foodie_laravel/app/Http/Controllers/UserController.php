@@ -8,8 +8,7 @@ use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {  
-   
-    
+  
     public function login(Request $request){
         $signupdata = $request->validate([
 
@@ -43,5 +42,18 @@ class UserController extends Controller
         return view('login');
     }
 
+    public function UpdateProfile(User $user, Request $request){
+        $incomingData = $request->validate([
+            'name' => 'required',
+            'email' => 'required'
+        ]);
+
+        $incomingData['name'] = strip_tags($incomingData['name']);
+        $incomingData['email'] = strip_tags($incomingData['email']);
+
+        
+        $user->update($incomingData);
+        return redirect('/profile');
+    }
    
 }

@@ -16,7 +16,8 @@ body, html {
   flex-direction: row;
   align-items: center;
   background-color: rgb(58, 58, 58);
-  color: rgb(228, 228, 228)
+  color: rgb(228, 228, 228);
+  
   
   
 }

@@ -19,8 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    
-    // $posts = Foodpost::where('user_id', auth()->id())->latest()->get();
+
     $posts = Foodpost::all();
     return view('home',['posts'=>$posts]);
 });
@@ -29,8 +28,9 @@ Route::get('/', function () {
 
 Route::post('/signup', [UserController::class, 'signup']);
 Route::post('/login',[UserController::class,'login']);
-Route::post('/logout',[UserController::class,'logout']);
+
 Route::post('/profile',[UserController::class,'profile']);
+Route::get('/logout',[UserController::class,'logout']);
 
 Route::post('/addfood',[PostController::class,'createpost']);
 
@@ -44,17 +44,36 @@ Route::get('/login',function(){
 
 Route::get('/addfood',function(){
     return view('addfood');
-});
+}); 
 
-
-
-// // Route::get('/profile',function(){
-// //     $posts = Foodpost::where('id', auth()->id())->latest()->get();
-// //     return view('profile', ['post'=>$posts]);
+// Route::get('/editpost',function(){
+//     return view('editpost');
 // });
 
-Route::get('/profile', function(){
-    $user = User::where('id', auth()->id())->latest()->get();
-    return view('profile', ['user'=>$user]);
+Route::get('/edit-food/{post}',function($post_id){
+    $post = Foodpost::where('id', $post_id)->latest()->first();
+    return view('edit-food', ['post'=>$post]);
 });
 
+Route::get('/profile', function(){
+    $user = User::where('id', auth()->id())->latest()->first();
+    $posts = Foodpost::where('user_id', auth()->id())->latest()->get();
+    return view('profile', ['user'=>$user, 'posts'=>$posts]);
+});
+
+// Route::get('/profile', function(){
+//     $posts = Foodpost::where('id', auth()->id())->latest()->get();
+//     return view('profile', ['post'=>$posts]);
+// });
+//get untuk show item dlm bentuk array ataupun multiple
+//guna first 
+Route::get('/editpost', function(){
+    $user = User::where('id', auth()->id())->latest()->first();
+    return view('editpost', ['user'=>$user]);
+}); 
+
+Route::put('/editpost/{user}',[UserController::class, 'UpdateProfile']);
+
+Route::delete('/delete-post/{post}',[PostController::class, 'deletePost']);
+
+Route::put('/edit-food/{post}',[PostController::class, 'UpdateFoodpost']);

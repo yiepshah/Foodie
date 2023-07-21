@@ -24,13 +24,18 @@
               <li class="nav-item">
                 <a href="/profile" class="nav-link active">Profile</a>
               </li>
-              @endauth
+              <li class="nav-item">
+                <a href="/logout" class="nav-link active">Logout</a>
+              </li>
+              @else
               <li class="nav-item">
                 <a href="/signup" class="nav-link active">Sign Up</a>
               </li>
               <li class="nav-item">
                 <a href="/login" class="nav-link active">Log  In</a>
               </li>
+              @endauth
+              
             </ul>
           </div>
         </div>
