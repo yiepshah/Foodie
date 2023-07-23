@@ -37,17 +37,20 @@ class PostController extends Controller
             'foodsender'=>'required',
             'foodname'=>'required',
             'foodprice'=>'required',
-            'phonenumber'=>'required'
-
+            'phonenumber'=>'required',
+            'foodimage'=>'required|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
+        $imagePath = $request->file('foodimage')->store('images', 'public');
         $signupdata['foodsender'] = strip_tags($signupdata['foodsender']);
         $signupdata['foodname'] = strip_tags($signupdata['foodname']);
         $signupdata['foodprice'] = strip_tags($signupdata['foodprice']);
         $signupdata['phonenumber'] = strip_tags($signupdata['phonenumber']);
+        $signupdata['foodimage'] = $imagePath;
         $signupdata['user_id'] = auth()->id();
-
+        // php artisan make:migration remove_foodimage_from_foodposts
+        // dd($signupdata['foodimage']);
         Foodpost::create($signupdata);
-        return view('home');
+        return redirect('/');
     }
 }

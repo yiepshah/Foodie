@@ -9,5 +9,5 @@ class Foodpost extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['foodsender', 'foodname', 'foodprice','phonenumber','user_id'];
+    protected $fillable = ['foodsender', 'foodname', 'foodprice','phonenumber','user_id', 'foodimage'];
 }

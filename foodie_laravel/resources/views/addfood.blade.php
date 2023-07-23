@@ -13,7 +13,7 @@
     @include('include.css')
 
     
-    <form action="/addfood" method="POST" class="form-group mx-auto col-10 col-md-8 col-lg-6" style="margin-top: 4%" >
+    <form action="/addfood" method="POST" enctype="multipart/form-data" class="form-group mx-auto col-10 col-md-8 col-lg-6" style="margin-top: 4%" >
       <h3 style="color:aliceblue">Add Your Food here</h3><br>
         @csrf
         <div class="form-group">
@@ -30,9 +30,12 @@
 
           <div>
             <label style="color:rgb(218, 218, 218)" for="phonenumber">Number:</label>
-            <input type="text" class="form-control" name="phonenumber" placeholder="Enter a phone number">
+            <input id="phonenumber" type="text" class="form-control" name="phonenumber" placeholder="Enter a phone number">
           </div>
-          
+          <div class="mb-3">
+            <label style="color:rgb(218, 218, 218)" for="foodimage">Image:</label>
+            <input id="foodimage" type="file" class="form-control" name="foodimage" placeholder="Enter food image">
+          </div>
           
           <button type="submit" class="btn btn-success">Submit</button>
         </div>

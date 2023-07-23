@@ -16,7 +16,7 @@
     @foreach ($posts as $item)
 
     <div class="card">
-        <img src="https://i.pinimg.com/originals/c5/2b/91/c52b91c37ba4b93c73fe536137dac5a9.jpg" class="card-img-top" />
+        <img src="{{ asset(Storage::url($item->foodimage)) }}" alt="food image" class="card-img-top" />
         <div class="card-body">
             <h3>Name</h3><br>   
             <p>{{$item->foodname}}</p><br><hr>

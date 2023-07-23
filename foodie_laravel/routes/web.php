@@ -61,6 +61,7 @@ Route::get('/profile', function(){
     return view('profile', ['user'=>$user, 'posts'=>$posts]);
 });
 
+
 // Route::get('/profile', function(){
 //     $posts = Foodpost::where('id', auth()->id())->latest()->get();
 //     return view('profile', ['post'=>$posts]);
