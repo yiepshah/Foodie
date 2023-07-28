@@ -19,14 +19,16 @@ class PostController extends Controller
             'foodname' => 'required',
             'foodsender' => 'required',
             'foodprice' => 'required',
-            'phonenumber' => 'required'
+            'phonenumber' => 'required',
+            'foodimage'=>'required|image|mimes:jpeg,png,jpg,gif|max:2048'
 
         ]);
+        $imagePath = $request->file('foodimage')->store('images', 'public');
         $foodpostdata['foodname'] = strip_tags($foodpostdata['foodname']);
         $foodpostdata['foodsender'] = strip_tags($foodpostdata['foodsender']);
         $foodpostdata['foodprice'] = strip_tags($foodpostdata['foodprice']);
         $foodpostdata['phonenumber'] = strip_tags($foodpostdata['phonenumber']);
-
+        $foodpostdata['foodimage'] = $imagePath;
         
         $post->update($foodpostdata);
         return redirect('/profile');

@@ -33,9 +33,9 @@ class UserController extends Controller
         $signupdata = $request->validate([
             'name' => ['required', 'min:6'],
             'email' => ['required', 'email', Rule::unique('users','email')],
-            'password' => ['required','min:5']
+            'password' => ['required','min:5'],
         ]);
-
+       
         $signupdata['password']= bcrypt($signupdata['password']);
         $user = User::create($signupdata);
         auth()->login($user);
@@ -45,13 +45,18 @@ class UserController extends Controller
     public function UpdateProfile(User $user, Request $request){
         $incomingData = $request->validate([
             'name' => 'required',
-            'email' => 'required'
+            'email' => 'required',
+            'profileimage'=> 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
+
+        if ($request->hasFile('profileimage')) {
+            $imagePath = $request->file('profileimage')->store('images', 'public');
+            $incomingData['profileimage'] = $imagePath;
+        }
 
         $incomingData['name'] = strip_tags($incomingData['name']);
         $incomingData['email'] = strip_tags($incomingData['email']);
 
-        
         $user->update($incomingData);
         return redirect('/profile');
     }

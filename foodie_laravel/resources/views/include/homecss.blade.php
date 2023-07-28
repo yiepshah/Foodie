@@ -15,7 +15,7 @@ body, html {
   .card {
   flex-direction: row;
   align-items: center;
-  background-color: rgb(58, 58, 58);
+  background-color: rgb(39, 39, 39);
   color: rgb(228, 228, 228);
   
   

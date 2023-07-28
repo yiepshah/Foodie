@@ -85,24 +85,28 @@
                 <div class="row gutters">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <h6 class="mb-2 text-light">Edit Profile</h6>
-                        {{-- @foreach ($posts as $post) --}}
+                        
                     </div><br><br>
-                    <form action="/editpost/{{$user->id}}" method="POST">
+                    <form action="/editpost/{{$user->id}}" enctype="multipart/form-data" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                        
-                            
+                         
                             <div class="form-group"> 
-                                
                                 <label class="mb-2 text-light" for="fullName">Full Name:</label>
                                 <input type="text" name="name" class="form-control" id="fullName" placeholder="Enter new name" value="{{$user->name}}">
                             </div>
-                        </div>
+                        </div><br>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label class="mb-2 text-light" for="eMail">Email:</label>
                                 <input type="email" name="email" class="form-control" id="eMail" placeholder="Enter new email ID" value="{{$user->email}}">
+                            </div>
+                        </div><br>
+                        <div>
+                            <div class="form-group">
+                                <label class="mb-2 text-light" for="profileimage">Image:</label><br>
+                                <input type="file" name="profileimage" id="profileimage">
                             </div>
                         </div>
                         <div class="row gutters">
@@ -114,7 +118,7 @@
                         </div>
                     </form>
                 
-            {{-- </div>       @endforeach  --}}
+            
                         
               
         </div>

@@ -27,7 +27,14 @@
       
           <label for="password"><b>Password</b></label>
           <input type="password" placeholder="Enter Password" name="password" required>
-      
+
+        <div>
+            {{-- <div class="form-group mb-3">
+                <label class="mb-2" for="profileimage">Image:</label><br>
+                <input type="file" name="profileimage" id="profileimage">
+            </div>
+        </div> --}}
+
           <button type="submit" class="btn">submit</button><br><br>       
           <a style="color: black" href="/login">Login</a>
         </form>

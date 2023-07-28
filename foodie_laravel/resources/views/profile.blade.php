@@ -48,7 +48,7 @@
       <div class="mx-auto col-7 col-md-8 col-lg-2">
 
         <div class="profile">
-          <img src="https://lh3.googleusercontent.com/pw/AIL4fc9rNiDjG7TIJWDVe-SJCwQp_6X_jB8gz3FMvGhi-itUFslH79mqWBkuPQTBvlzAw8eotnUEtFG1QLlDQGjR7qyDDZRT02fXdaPGdZsTU9mX0OG57Xii9letxcw2qTwFE7ObdXlxuRKsD9yP0tuAboCwJigCSg00ehkOy9Gcm531J1jaOh1IVHelmFOyVX9rY6pHMli4aGct6_Rpk_ct90jb5-H4nZ8GUy1PEOAa_uFHh13hW0vmsiIinG-AMN60nY0wk2Yqv8vvZl91WdPFLbVUCxDpUtmIKrEniG10WYPkBcoJK7u0KuXpOpooDaLGVObJmR9FmjAVlL8CwUK702oKJ-0EEv3MPUolUzC_yBUvL1K173jb-KtqvetqJv7pW1m-jqgYW1SnnUMS8x9-ZEZKxW0rIGYPBTKRuf29bsolS4o18YTRdAs8Bv-vSvJ9IsPyzJbI7MXaMkXOs_E75rAGI7pmD9TiLUg1hAAaHHJuKXjv81_MioT3cWPyGe68kiaAcSW9mxpXK5iHxJKZZRAKznm2syCfAfXK1U4ZXYW7Ke7v9fy2-zcA8GwFa3dZgdsN7AJna8hsVKUNxSBzoIPJr_-svYOYlJ--6mvjR7_nkj3oavrToD6W36kWf5SvyEYQ7jjwQyTzRb8rJvl_27VOBJNKe15b8t8fDrTGyauxCnZ5jayFn8knmrFSU4RkQxPS7Ooqqeffp7QOVjq5NXYei3tWzGYYZvHwS8Qy-gLI7XnypRrI6HSHMjCqY_AzZnwRvYbAHAQmd2CoKzCLkcI7Zskfgg6qVmUn7XmEp-BbquSrtkbycxdisLdm8AiByXdKdpTG38i5PH9j1K2o6b3-arpPiZdxwfOyePYKySnpn5kT370FetuZJ3uIP3NlMjr6rQWmMnPNcsC9hYfKao6nHw=w550-h978-s-no?authuser=0" alt="" class="profile_image">
+          <img src="{{ asset(Storage::url($user->profileimage)) }}" alt="profile image" class="profile_image">
           <div class="profile_name">{{$user->name}}</div><br>
           <div class="profile_email">{{$user->email}}</div><br>
           
@@ -61,7 +61,7 @@
     @foreach ($posts as $item)
 
     <div class="card">
-        <img src="https://i.pinimg.com/originals/c5/2b/91/c52b91c37ba4b93c73fe536137dac5a9.jpg" class="card-img-top" />
+      <img src="{{ asset(Storage::url($item->foodimage)) }}" alt="food image" class="card-img-top" />
         <div class="card-body">
             <h3>Name</h3><br>   
             <p>{{$item->foodname}}</p><br><hr>

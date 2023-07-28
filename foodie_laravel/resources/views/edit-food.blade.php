@@ -8,13 +8,19 @@
     crossorigin="anonymous">
     <title>Document</title>
     <style>
+
+      
+
         .food-picture{
             margin: 0 auto;
-            height: 700px;
-            width: 900px;
+            height: 400px;
+            width: 600px;
             object-fit: cover;
             border-radius: 50px;
-        }
+            
+        } 
+
+
     </style>
 </head>
 <body>
@@ -22,35 +28,40 @@
     @include('include.header')
     
 
-    <div class="card">
-        <img class="food-picture" src="https://i.pinimg.com/originals/c5/2b/91/c52b91c37ba4b93c73fe536137dac5a9.jpg" class="card-img-top" />
-        <form action="/edit-food/{{$post->id}}" method="POST">
-            @csrf
-            @method('PUT')
-            <div class="card-body">
-                <h3>Name</h3><br>   
-                <input type="text" name="foodname" value="{{$post->foodname}}">
+   <div class="card">
+    <form action="/edit-food/{{$post->id}}" enctype="multipart/form-data" method="POST">
+        @csrf
+        @method('PUT')
+        <img class="food-picture" src="{{ asset(Storage::url($post->foodimage)) }}" alt="food image" />
+        <div class="card-body">
+            <div class="mb-3">
+                <label for="foodname" class="form-label">Name</label>
+                <input type="text" id="foodname" name="foodname" class="form-control" value="{{$post->foodname}}">
+            </div>
 
-            <div class="card-text">
-                <h3>Restaurant</h3><br>
-                <input type="text" name="foodsender" value="{{$post->foodsender}}">
-            </div><br><hr>
+            <div class="mb-3">
+                <label for="foodsender" class="form-label">Restaurant</label>
+                <input type="text" id="foodsender" name="foodsender" class="form-control" value="{{$post->foodsender}}">
+            </div>
 
-            <div class="card-text">
-                <h3>Price</h3><br>
-                <input type="text" name="foodprice" value="{{$post->foodprice}}">
-            </div><br><hr>
+            <div class="mb-3">
+                <label for="foodprice" class="form-label">Price</label>
+                <input type="text" id="foodprice" name="foodprice" class="form-control" value="{{$post->foodprice}}">
+            </div>
 
-            <div class="card-text">
-                <h3>Number</h3><br>
-            60 -  <input type="text" name="phonenumber" value="{{$post->phonenumber}}">
-            </div><br><hr>
+            <div class="mb-3">
+                <label for="phonenumber" class="form-label">Number</label>
+                <input type="text" id="phonenumber" name="phonenumber" class="form-control" value="{{$post->phonenumber}}">
+            </div>
+
+            <div class="mb-3">
+                <label for="foodimage" class="form-label">Food Image</label>
+                <input type="file" id="foodimage" name="foodimage" class="form-control">
+            </div>
+
             <button class="btn btn-primary">Update</button>
-        </form>
         </div>
-      </div><br>
-
-
+    </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>
