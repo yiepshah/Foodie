@@ -62,7 +62,7 @@
 
     <div class="card">
       <img src="{{ asset(Storage::url($item->foodimage)) }}" alt="food image" class="card-img-top" />
-        <div class="card-body">
+      <div class="card-body">
             <h3>Name</h3><br>   
             <p>{{$item->foodname}}</p><br><hr>
 
@@ -86,8 +86,8 @@
         @method('DELETE') 
         <button class="btn btn-danger">Delete</button>
         </form>
-        </div>
       </div>
+    </div>
 
       @endforeach
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>

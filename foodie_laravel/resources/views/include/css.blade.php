@@ -78,10 +78,6 @@
     .nav-link{
       color: #ddd
     }
-    .containersignup{
-      margin-top: 5%;
-      
-    }
     
     </style>
 <body>
